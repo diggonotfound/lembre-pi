@@ -6,4 +6,20 @@ import { Component } from '@angular/core';
   styleUrl: './cadastro.scss',
   templateUrl: './cadastro.html',
 })
-export class Cadastro {}
+export class Cadastro {
+
+  nome = '';
+  descricao = '';
+  mensagem = '';
+
+  salvar(): void {
+    if (!this.nome.trim()) return;
+    this.mensagem = 'Projeto "${this.nome.trim()}" validado!';
+  }
+
+  limpar(): void {
+    this.nome = '';
+    this.descricao = '';
+    this.mensagem = '';
+  }
+}
