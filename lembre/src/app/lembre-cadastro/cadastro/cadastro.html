@@ -1,36 +1,136 @@
-<main class="pagina">
-    <mat-card appearance="outlined">
-        <mat-card-header>
-            <mat-card-title>Cadastro do Projeto</mat-card-title>
-            <mat-card-subtitle>
-                Informe os dados do Projeto Integrador
-            </mat-card-subtitle>
-        </mat-card-header>
+```html
+<main class="cadastro-page">
 
-        <mat-card-content>
-            <mat-form-field appearance="outline">
-                <mat-label>Nome do Projeto</mat-label>
-                <input matInput name="nome" required
-                [(ngModel)]="nome">
-            </mat-form-field>
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <a routerLink="/lembre-cadastro/inicio" class="voltar">
+      <span>←</span>
+    </a>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Descrição</mat-label>
-                <textarea matInput name="descricao" rows="4"
-                    [(ngModel)]="descricao"></textarea>
-            </mat-form-field>
+    <h1>Criar Conta</h1>
+  </header>
 
-            <p *ngIf="mensagem" role="status"> {{ mensagem }}</p>
-        </mat-card-content>
+  <!-- Logo -->
+  <section class="logo-area">
+    <div class="logo">
+      <span class="logo-icone">📝</span>
+      <span class="logo-estrela">⭐</span>
+    </div>
+  </section>
 
-        <mat-card-actions align="end">
-            <button mat-button type="button" (click)="limpar()">
-                Limpar
-            </button>
-            <button mat-flat-button type="button"
-            [disabled]="!nome.trim()" (click)="salvar()">
-            Salvar Projeto
-            </button>
-        </mat-card-actions>
-    </mat-card>
+  <!-- Formulário -->
+  <form class="formulario" (ngSubmit)="criarConta()">
+
+    <div class="campo">
+      <label for="nome">Nome Completo</label>
+
+      <input
+        id="nome"
+        type="text"
+        name="nome"
+        [(ngModel)]="nome"
+        placeholder="Ex: Rodrigo Silva"
+        required
+      />
+    </div>
+
+    <div class="campo">
+      <label for="email">E-mail</label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Ex: seuemail@exemplo.com"
+        required
+      />
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha</label>
+
+      <div class="senha-container">
+        <input
+          id="senha"
+          [type]="mostrarSenha ? 'text' : 'password'"
+          name="senha"
+          [(ngModel)]="senha"
+          placeholder="Crie uma senha forte"
+          required
+        />
+
+        <button
+          type="button"
+          class="mostrar-senha"
+          (click)="mostrarSenha = !mostrarSenha">
+          {{ mostrarSenha ? '◉' : '⊗' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="campo">
+      <label for="confirmarSenha">Confirmar Senha</label>
+
+      <div class="senha-container">
+        <input
+          id="confirmarSenha"
+          [type]="mostrarConfirmacao ? 'text' : 'password'"
+          name="confirmarSenha"
+          [(ngModel)]="confirmarSenha"
+          placeholder="Repita a senha criada"
+          required
+        />
+
+        <button
+          type="button"
+          class="mostrar-senha"
+          (click)="mostrarConfirmacao = !mostrarConfirmacao">
+          {{ mostrarConfirmacao ? '◉' : '⊗' }}
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- Mensagem de validação -->
+  <p class="mensagem" *ngIf="mensagem">
+    {{ mensagem }}
+  </p>
+
+  <!-- Opções de cadastro -->
+  <section class="opcoes">
+
+    <div class="separador">
+      <span></span>
+      <small>OU CONTINUE COM</small>
+      <span></span>
+    </div>
+
+    <div class="redes-sociais">
+      <button type="button" (click)="avisarSocial('Google')">
+        Google
+      </button>
+
+      <button type="button" (click)="avisarSocial('Apple')">
+        Apple
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="botao-cadastrar"
+      (click)="criarConta()">
+      Criar Minha Conta
+    </button>
+
+    <p class="login-link">
+      Já tem uma conta?
+      <a routerLink="/lembre-cadastro/entrar">
+        Fazer Login
+      </a>
+    </p>
+
+  </section>
+
 </main>

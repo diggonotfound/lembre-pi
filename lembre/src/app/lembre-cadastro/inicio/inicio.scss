@@ -1,0 +1,163 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.welcome-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: clamp(48px, 15vh, 150px) 24px 44px;
+
+  background: #ffffff;
+  color: #20283a;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand-icon {
+  width: 104px;
+  height: 104px;
+
+  border-radius: 28px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+
+  background: linear-gradient(
+    145deg,
+    #d99aff,
+    #9b35f2
+  );
+
+  box-shadow: 0 8px 18px #9c43e64a;
+}
+
+.brand-emoji {
+  font-size: 55px;
+}
+
+.brand-star {
+  position: absolute;
+  right: 7px;
+  bottom: 8px;
+  font-size: 27px;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: clamp(21px, 5vw, 27px);
+  font-weight: 750;
+
+  text-align: center;
+
+  text-decoration: underline;
+  text-decoration-color: #6a70ff;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.welcome-actions {
+  width: min(100%, 420px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button {
+  min-height: 48px;
+
+  border-radius: 13px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.button-primary {
+  color: white;
+  background: #656cff;
+  box-shadow: 0 5px 12px #656cff35;
+}
+
+.button-outline {
+  color: #6269f6;
+  border: 1px solid #e5e5f2;
+  background: white;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 7px 0 0;
+  color: #697086;
+}
+
+.separator span {
+  height: 1px;
+  flex: 1;
+  background: #e8e8f0;
+}
+
+.separator small {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.social-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.social-button {
+  height: 42px;
+
+  border: 1px solid #e5e5f2;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #252b3b;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.social-message {
+  margin: 0;
+  text-align: center;
+  color: #686d80;
+  font-size: 11px;
+}
+
+@media (min-width: 700px) {
+  .welcome-page {
+    min-height: 760px;
+    max-width: 480px;
+    margin: 24px auto;
+
+    border: 1px solid #eee;
+    border-radius: 24px;
+
+    box-shadow: 0 12px 40px #20204012;
+  }
+}

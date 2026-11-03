@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { LembreCadastroRoutingModule } from './lembre-cadastro-routing-module';
+
+import { MatCardModule } from '@angular/material/card';
+
+import { LembreCadastroRoutingModule }
+  from './lembre-cadastro-routing-module';
+
 import { Cadastro } from './cadastro/cadastro';
+import { Inicio } from './inicio/inicio';
+import { Entrar } from './entrar/entrar';
 
 @NgModule({
-  declarations: [Cadastro],
-  imports: [CommonModule, LembreCadastroRoutingModule, FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  declarations: [
+    Cadastro,
+    Inicio,
+    Entrar
+  ],
+  imports: [
+    CommonModule,
+  FormsModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  LembreCadastroRoutingModule
+  ]
 })
 export class LembreCadastroModule {}

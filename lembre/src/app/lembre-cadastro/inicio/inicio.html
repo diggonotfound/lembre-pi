@@ -1,0 +1,58 @@
+<main class="welcome-page">
+
+  <div class="welcome-content">
+
+    <div class="brand-icon">
+      <span class="brand-emoji">📝</span>
+      <span class="brand-star">⭐</span>
+    </div>
+
+    <h1>Evolua seus hábitos</h1>
+
+  </div>
+
+  <section class="welcome-actions">
+
+    <a
+      class="button button-primary"
+      routerLink="/lembre-cadastro/cadastro">
+      Criar Conta Grátis
+    </a>
+
+    <a
+      class="button button-outline"
+      routerLink="/lembre-cadastro/entrar">
+      Já tenho conta • Entrar
+    </a>
+
+    <div class="separator">
+      <span></span>
+      <small>OU CONTINUE COM</small>
+      <span></span>
+    </div>
+
+    <div class="social-actions">
+
+      <button
+        type="button"
+        class="social-button"
+        (click)="avisarSocial('Google')">
+        Google
+      </button>
+
+      <button
+        type="button"
+        class="social-button"
+        (click)="avisarSocial('Apple')">
+        Apple
+      </button>
+
+    </div>
+
+    <p *ngIf="mensagemSocial" class="social-message">
+      {{ mensagemSocial }}
+    </p>
+
+  </section>
+
+</main>
