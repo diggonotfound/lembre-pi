@@ -1,0 +1,286 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.entrar-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 24px 16px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  color: #222b3d;
+}
+
+/* Cabeçalho */
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 34px;
+}
+
+.voltar {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #20283a;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Logo */
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px 0 24px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    #d99aff,
+    #a43af2
+  );
+
+  box-shadow: 0 5px 12px #a43af233;
+}
+
+.logo-icone {
+  font-size: 39px;
+}
+
+.logo-estrela {
+  position: absolute;
+  right: 3px;
+  bottom: 4px;
+  font-size: 21px;
+}
+
+/* Formulário */
+
+.formulario {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  background: #e0dcfa;
+  border-radius: 17px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 10px;
+  color: #62647a;
+  font-weight: 500;
+}
+
+.campo input {
+  width: 100%;
+  height: 33px;
+
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+  border-radius: 8px;
+
+  background: #f8f7fc;
+  color: #303449;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.campo input::placeholder {
+  color: #85879a;
+}
+
+.campo input:focus {
+  outline: 2px solid #7772ff;
+}
+
+/* Senha */
+
+.senha-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.senha-container input {
+  padding-right: 38px;
+}
+
+.mostrar-senha {
+  position: absolute;
+  right: 9px;
+
+  border: none;
+  background: transparent;
+
+  color: #62647a;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* Mensagem */
+
+.mensagem {
+  margin: 9px 0 0;
+
+  text-align: center;
+  font-size: 11px;
+  color: #c03954;
+}
+
+/* Opções sociais */
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.separador span {
+  flex: 1;
+  height: 1px;
+  background: #e6e5ed;
+}
+
+.separador small {
+  color: #666b7d;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.redes-sociais {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.redes-sociais button {
+  height: 35px;
+
+  border: 1px solid #e5e5ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #20283a;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* Botão entrar */
+
+.botao-entrar {
+  height: 40px;
+  margin-top: 7px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #656cff;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 12px #656cff35;
+  transition: 0.2s;
+}
+
+.botao-entrar:hover {
+  background: #5159ed;
+}
+
+/* Cadastro */
+
+.cadastro-link {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 10px;
+  color: #686b7b;
+}
+
+.cadastro-link a {
+  color: #6269f6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Responsividade */
+
+@media (min-width: 600px) {
+  .entrar-page {
+    min-height: 760px;
+    margin: 24px auto;
+
+    border: 1px solid #eeeeee;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px #00000010;
+  }
+}

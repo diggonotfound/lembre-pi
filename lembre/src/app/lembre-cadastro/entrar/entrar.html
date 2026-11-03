@@ -1,1 +1,108 @@
-<p>entrar works!</p>
+<main class="entrar-page">
+
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <a
+      routerLink="/lembre-cadastro/inicio"
+      class="voltar">
+      ←
+    </a>
+
+    <h1>Entrar</h1>
+  </header>
+
+  <!-- Logo -->
+  <section class="logo-area">
+    <div class="logo">
+      <span class="logo-icone">📝</span>
+      <span class="logo-estrela">⭐</span>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <form class="formulario" (ngSubmit)="entrar()">
+
+    <div class="campo">
+      <label for="email">E-mail</label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Digite seu e-mail"
+        required
+      />
+    </div>
+
+    <div class="campo">
+      <label for="senha">Senha</label>
+
+      <div class="senha-container">
+        <input
+          id="senha"
+          [type]="mostrarSenha ? 'text' : 'password'"
+          name="senha"
+          [(ngModel)]="senha"
+          placeholder="Digite sua senha"
+          required
+        />
+
+        <button
+          type="button"
+          class="mostrar-senha"
+          (click)="mostrarSenha = !mostrarSenha">
+          {{ mostrarSenha ? '◉' : '⊗' }}
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- Mensagem -->
+  <p class="mensagem" *ngIf="mensagem">
+    {{ mensagem }}
+  </p>
+
+  <!-- Opções de acesso -->
+  <section class="opcoes">
+
+    <div class="separador">
+      <span></span>
+      <small>OU CONTINUE COM</small>
+      <span></span>
+    </div>
+
+    <div class="redes-sociais">
+
+      <button
+        type="button"
+        (click)="avisarSocial('Google')">
+        Google
+      </button>
+
+      <button
+        type="button"
+        (click)="avisarSocial('Apple')">
+        Apple
+      </button>
+
+    </div>
+
+    <button
+      type="button"
+      class="botao-entrar"
+      (click)="entrar()">
+      Entrar
+    </button>
+
+    <p class="cadastro-link">
+      Não tem uma conta?
+      <a routerLink="/lembre-cadastro/cadastro">
+        Cadastre-se grátis
+      </a>
+    </p>
+
+  </section>
+
+</main>
